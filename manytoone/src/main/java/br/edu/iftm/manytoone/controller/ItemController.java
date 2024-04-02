@@ -28,7 +28,7 @@ class ItemController {
         }
 
         @GetMapping("{id}")
-        public Item getById(@PathVariable("id") Integer id) {
+        public Item getById(@PathVariable("id") Long id) {
                 return service.getById(id);
         }
 
@@ -38,12 +38,12 @@ class ItemController {
         }
 
         @PutMapping("{id}")
-        public Item update(@PathVariable("id") Integer id, @RequestBody Item item) {
+        public Item update(@PathVariable("id") Long id, @RequestBody Item item) {
                 return service.update(id, item);
         }
 
         @DeleteMapping("{id}")
-        public boolean delete(@PathVariable("id") Integer id) {
+        public boolean delete(@PathVariable("id") Long id) {
                 return service.delete(id);
         }
 }
