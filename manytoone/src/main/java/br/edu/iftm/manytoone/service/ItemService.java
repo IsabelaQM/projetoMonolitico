@@ -39,7 +39,7 @@ public class ItemService {
                 }
         }
 
-        public Item getById(Integer id) {
+        public Item getById(Long id) {
                 Optional<Item> item = repository.findById(id);
                 if (item.isPresent()) {
                         return item.get();
@@ -51,7 +51,7 @@ public class ItemService {
                 return repository.save(item);
         }
 
-        public Item update(Integer id, Item item) {
+        public Item update(Long id, Item item) {
                 Optional<Item> existingItemOptional = repository.findById(id);
 
                 if (existingItemOptional.isPresent()) {
@@ -63,7 +63,7 @@ public class ItemService {
                 }
         }
 
-        public boolean delete(Integer id) {
+        public boolean delete(Long id) {
                 try {
                         repository.deleteById(id);
                         return true;
