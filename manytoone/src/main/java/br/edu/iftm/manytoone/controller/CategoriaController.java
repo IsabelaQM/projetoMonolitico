@@ -33,7 +33,7 @@ class CategoriaController {
         }
 
         @GetMapping("{id}")
-        public Categoria getById(@PathVariable("id") Integer id) {
+        public Categoria getById(@PathVariable("id") Long id) {
                 return service.getById(id);
         }
 
@@ -44,12 +44,12 @@ class CategoriaController {
         }
 
         @PutMapping("{id}")
-        public Categoria update(@PathVariable("id") Integer id, @RequestBody Categoria item) {
+        public Categoria update(@PathVariable("id") Long id, @RequestBody Categoria item) {
                 return service.update(id, item);
         }
 
         @DeleteMapping("{id}")
-        public boolean delete(@PathVariable("id") Integer id) {
+        public boolean delete(@PathVariable("id") Long id) {
                 return service.delete(id);
         }
 }
