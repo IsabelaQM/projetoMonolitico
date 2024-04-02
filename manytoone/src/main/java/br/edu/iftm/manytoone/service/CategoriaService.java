@@ -39,7 +39,7 @@ public class CategoriaService {
                 }
         }
 
-        public Categoria getById(Integer id) {
+        public Categoria getById(Long id) {
                 Optional<Categoria> categoria = repository.findById(id);
                 if (categoria.isPresent()) {
                         return categoria.get();
@@ -51,7 +51,7 @@ public class CategoriaService {
                 return repository.save(categoria);
         }
 
-        public Categoria update(Integer id, Categoria item) {
+        public Categoria update(Long id, Categoria item) {
                 Optional<Categoria> existingItemOptional = repository.findById(id);
 
                 if (existingItemOptional.isPresent()) {
@@ -63,7 +63,7 @@ public class CategoriaService {
                 }
         }
 
-        public boolean delete(Integer id) {
+        public boolean delete(Long id) {
                 try {
                         repository.deleteById(id);
                         return true;
